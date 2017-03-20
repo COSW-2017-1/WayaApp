@@ -1,5 +1,7 @@
 package abcd.com.wayaapp;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,8 +15,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import abcd.com.wayaapp.fragments.FindFrag;
+import abcd.com.wayaapp.fragments.GalleryFrag;
+import abcd.com.wayaapp.fragments.MapFrag;
+import abcd.com.wayaapp.fragments.ProfileFrag;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    //Obtener instancia de admin de fragmentos
+    FragmentManager fragmentManager;
+    //Crear transacción
+    FragmentTransaction transaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +52,17 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        loadFragment();
+    }
+
+    private void loadFragment() {
+        //Obtener instancia de admin de fragmentos
+        fragmentManager = getFragmentManager();
+        //Crear transacción
+        transaction = fragmentManager.beginTransaction();
+        FindFrag ff = new FindFrag();
+        transaction.add(R.id.fragment_container, ff);
+        transaction.commit();
     }
 
     @Override
@@ -80,14 +103,28 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
+        transaction = fragmentManager.beginTransaction();
+        //Crear Fragmento y añadirlo
+        if (id == R.id.nav_profile) {
+            ProfileFrag pf = new ProfileFrag();
+            transaction.replace(R.id.fragment_container, pf);
+            transaction.addToBackStack(null);
+            transaction.commit();
         } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
+            GalleryFrag gf = new GalleryFrag();
+            transaction.replace(R.id.fragment_container, gf);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        } else if (id == R.id.nav_find) {
+            FindFrag ff = new FindFrag();
+            transaction.replace(R.id.fragment_container, ff);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        } else if (id == R.id.nav_find_map) {
+            MapFrag mf = new MapFrag();
+            transaction.replace(R.id.fragment_container, mf);
+            transaction.addToBackStack(null);
+            transaction.commit();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
@@ -98,4 +135,5 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

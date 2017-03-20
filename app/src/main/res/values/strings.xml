@@ -7,6 +7,17 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">Bienvenido a Waya!</string>
 
+    <!-- Strings related to Side Menu-->
+    <string name="profile">Perfil</string>
+    <string name="galllery">Galería</string>
+    <string name="find">Buscar</string>
+    <string name="find_map">Buscar por mapa</string>
+    <string name="contact">Contacto</string>
+    <string name="share">Compartir</string>
+    <string name="send">Enviar</string>
+
+
+
     <!-- Strings related to login -->
     <string name="prompt_email">Correo</string>
     <string name="prompt_password">Contraseña </string>
