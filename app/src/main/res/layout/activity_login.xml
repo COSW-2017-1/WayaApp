@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="abcd.com.waya.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:weightSum="3"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="2">
+
+            <TextView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBaseWhite"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:text="@string/welcome_message_title"/>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/colorBaseWhite"
+                android:text="@string/welcome_message"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="@string/prompt_email"
+                android:textColor="@color/colorBaseWhite"
+                android:textColorHint="@color/colorBaseWhite"
+                android:backgroundTint="@color/colorBaseWhite"/>
+
+            <EditText
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="@string/prompt_password"
+                android:textColor="@color/colorBaseWhite"
+                android:textColorHint="@color/colorBaseWhite"
+                android:backgroundTint="@color/colorBaseWhite"/>
+
+            <Button
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="@string/action_sign_in"
+                android:textColor="@color/colorAccent"
+                android:background="@drawable/ripple_effect_white2"
+                android:id="@+id/button"
+                android:onClick="verifyAndSend"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

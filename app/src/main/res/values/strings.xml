@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Waya</string>
+    <string name="welcome_message_title">Bienvenido a Waya!</string>
+    <string name="welcome_message">Utiliza Waya para revisar el estado de tus bares favoritos en tiempo real, además gana puntos de descuento subiendo contenido del sitio en el que estás para hacer más grande nuestra comunidad :)</string>
+    <string name="prompt_email">Correo</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">ingresa o regístrate</string>
+</resources>
