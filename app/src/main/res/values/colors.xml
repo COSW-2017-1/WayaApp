@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#FBC02D</color>
     <color name="colorDarkOrange">#EF310E</color>
     <color name="colorBaseWhite">#F4F7F6</color>
+    <color name="colorNeonBlueLigth">#2606F4</color>
+    <color name="colorNeonBlueDark">#100A5B</color>
     <color name="colorAccent">#FF4081</color>
 </resources>
