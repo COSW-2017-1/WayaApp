@@ -4,25 +4,24 @@ import android.app.Fragment;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
 import abcd.com.waya.R;
-import abcd.com.waya.adapters.BarListAdapter;
+import abcd.com.waya.adapters.RecyclerBarAdapter;
 
 public class FindBarListFrag extends Fragment{
 
+    //Elementos del RecyclerView
+    RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+    RecyclerView.Adapter adapter;
     //Vista del fragmento
     View view;
-    //Elementos quemados
-    ListView barList;
-    String[] title = {"Casa de la Cerveza","Gnoveva Bar", "Once Once Bar", "La Villa Bar",
-            "La zorra", "The Pub","Opera Bar"};
-    int[] imgs = {R.drawable.casadlcbar, R.drawable.gnovevabar, R.drawable.onceoncebar,
-            R.drawable.lavillabar, R.drawable.lazorra, R.drawable.thepubbar, R.drawable.operabar};
-    String description = "lorem ipsum dolor sit amet";
 
     @Nullable
     @Override
@@ -34,11 +33,12 @@ public class FindBarListFrag extends Fragment{
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-        Resources res = getResources();
-        barList = (ListView) getView().findViewById(R.id.bar_list);
-        BarListAdapter barAdapter = new BarListAdapter(getView().getContext(), title, imgs, description);
-        barList.setAdapter(barAdapter);
+        //----------------------------------------------------------------------------------------------
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        layoutManager = new LinearLayoutManager(view.getContext());
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new RecyclerBarAdapter();
+        recyclerView.setAdapter(adapter);
     }
 
     @Override

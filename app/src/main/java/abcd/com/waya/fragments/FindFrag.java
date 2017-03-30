@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import abcd.com.waya.R;
-import abcd.com.waya.adapters.BarListAdapter;
 
 /**
  * Created by PERSONAL on 20/03/2017.
@@ -58,7 +57,6 @@ public class FindFrag extends Fragment {
                 transaction = fragmentManager.beginTransaction();
                 FindBarListFrag fbl = new FindBarListFrag();
                 transaction.replace(R.id.tab_fragment_container, fbl);
-                transaction.addToBackStack(null);
                 transaction.commit();
             }
         });
@@ -72,7 +70,6 @@ public class FindFrag extends Fragment {
                 transaction = fragmentManager.beginTransaction();
                 CouponsFrag cf = new CouponsFrag();
                 transaction.replace(R.id.tab_fragment_container, cf);
-                transaction.addToBackStack(null);
                 transaction.commit();
             }
         });
@@ -86,7 +83,6 @@ public class FindFrag extends Fragment {
                 transaction = fragmentManager.beginTransaction();
                 EventsFrag ef = new EventsFrag();
                 transaction.replace(R.id.tab_fragment_container, ef);
-                transaction.addToBackStack(null);
                 transaction.commit();
             }
         });
@@ -110,9 +106,6 @@ public class FindFrag extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         Resources res = getResources();
-        /*barList = (ListView) getView().findViewById(R.id.bar_list);
-        BarListAdapter barAdapter = new BarListAdapter(getView().getContext(), title, imgs, description);
-        barList.setAdapter(barAdapter);*/
 
     }
 

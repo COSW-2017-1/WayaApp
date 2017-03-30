@@ -32,7 +32,7 @@
 
                 <ImageButton
                     android:id="@+id/drink"
-                    android:layout_weight="1.5"
+                    android:layout_weight="1.1"
                     android:layout_width="match_parent"
                     android:layout_height="0px"
                     android:padding="15dp"
@@ -43,18 +43,18 @@
 
                 <ImageButton
                     android:id="@+id/profile"
-                    android:layout_weight="1.5"
+                    android:layout_weight="1.1"
                     android:layout_width="match_parent"
                     android:layout_height="0px"
                     android:padding="15dp"
-                    android:scaleType="fitCenter"
+
                     android:src="@drawable/ic_profile"
                     android:background="@drawable/ripple_effect_white"
                     android:onClick="changeView"/>
 
                 <ImageButton
                     android:id="@+id/gallery"
-                    android:layout_weight="1.5"
+                    android:layout_weight="1.1"
                     android:layout_width="match_parent"
                     android:layout_height="0px"
                     android:paddingLeft="15dp"
@@ -65,7 +65,7 @@
 
                 <ImageButton
                     android:id="@+id/comment"
-                    android:layout_weight="1.5"
+                    android:layout_weight="1.1"
                     android:layout_width="match_parent"
                     android:layout_height="0px"
                     android:padding="15dp"
