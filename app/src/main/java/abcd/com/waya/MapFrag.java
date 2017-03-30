@@ -54,6 +54,7 @@ public class MapFrag extends Fragment implements OnMapReadyCallback{
         LatLng location = new LatLng(4.7826755,-74.0447828);
         mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         mGoogleMap.addMarker(new MarkerOptions().position(location).title("ECI").snippet("Esta es la U :v"));
-        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(location));
+        CameraPosition Bogota = CameraPosition.builder().target(location).zoom(16).bearing(0).tilt(45).build();
+        mGoogleMap.moveCamera(CameraUpdateFactory.newCameraPosition(Bogota));
     }
 }

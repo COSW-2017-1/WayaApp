@@ -85,14 +85,8 @@
                 android:weightSum="10">
 
                 <LinearLayout
-                    android:layout_weight="1.5"
-                    android:layout_width="match_parent"
-                    android:layout_height="0px"
-                    android:background="@color/colorPrimary"></LinearLayout>
-
-                <LinearLayout
                     android:id="@+id/fragment_container"
-                    android:layout_weight="8.5"
+                    android:layout_weight="10"
                     android:layout_width="match_parent"
                     android:layout_height="0px"
                     android:orientation="vertical">
