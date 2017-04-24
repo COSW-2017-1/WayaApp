@@ -1,5 +1,8 @@
 package abcd.com.waya.adapters;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,7 +11,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Collections;
+import java.util.List;
+
 import abcd.com.waya.R;
+import abcd.com.waya.entities.DataBar;
 
 /**
  * Created by PERSONAL on 30/03/2017.
@@ -16,25 +27,11 @@ import abcd.com.waya.R;
 
 public class RecyclerBarAdapter extends RecyclerView.Adapter<RecyclerBarAdapter.ViewHolder>{
 
-    String[] title = {"Casa de la Cerveza",
-            "Gnoveva Bar",
-            "Once Once Bar",
-            "La Villa Bar",
-            "La zorra",
-            "The Pub",
-            "Opera Bar"};
+    List<DataBar> data= Collections.emptyList();
 
-    int[] imgs = {R.drawable.casadlcbar,
-            R.drawable.gnovevabar,
-            R.drawable.onceoncebar,
-            R.drawable.lavillabar,
-            R.drawable.lazorra,
-            R.drawable.thepubbar,
-            R.drawable.operabar};
-
-    String description = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y " +
-            "archivos de texto. Lorem Ipsum haLorem Ipsum es simplemente el texto de relleno de las" +
-            " imprentas y archivos de texto. Lorem Ipsum ha";
+    public RecyclerBarAdapter(List<DataBar> data) {
+        this.data = data;
+    }
 
     class ViewHolder extends RecyclerView.ViewHolder{
 
@@ -70,13 +67,24 @@ public class RecyclerBarAdapter extends RecyclerView.Adapter<RecyclerBarAdapter.
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.barImage.setImageResource(imgs[position]);
-        holder.barTitle.setText(title[position]);
-        holder.barDescription.setText(description);
+        DataBar current = data.get(position);
+        Bitmap bitmap = null;
+        System.out.println("URL DE IMAGEN -> " + current.imgs);
+        /*try {
+            bitmap = BitmapFactory.decodeStream((InputStream)new URL(current.imgs).getContent());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+
+        holder.barImage.setImageBitmap(bitmap);
+        holder.barTitle.setText(current.title);
+        holder.barDescription.setText(current.description);
     }
 
     @Override
     public int getItemCount() {
-        return title.length;
+        return data.size();
     }
 }
