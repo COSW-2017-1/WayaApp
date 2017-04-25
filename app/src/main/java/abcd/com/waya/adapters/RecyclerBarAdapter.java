@@ -3,6 +3,7 @@ package abcd.com.waya.adapters;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collections;
@@ -68,17 +70,10 @@ public class RecyclerBarAdapter extends RecyclerView.Adapter<RecyclerBarAdapter.
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         DataBar current = data.get(position);
-        Bitmap bitmap = null;
         System.out.println("URL DE IMAGEN -> " + current.imgs);
-        /*try {
-            bitmap = BitmapFactory.decodeStream((InputStream)new URL(current.imgs).getContent());
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
 
-        holder.barImage.setImageBitmap(bitmap);
+        new DownloadImageTask(current).execute(current.imgs);
+        holder.barImage.setImageBitmap(current.getImage());
         holder.barTitle.setText(current.title);
         holder.barDescription.setText(current.description);
     }
@@ -87,4 +82,33 @@ public class RecyclerBarAdapter extends RecyclerView.Adapter<RecyclerBarAdapter.
     public int getItemCount() {
         return data.size();
     }
+
+    class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+        DataBar db;
+
+        public DownloadImageTask(DataBar db) {
+            this.db = db;
+        }
+
+        @Override
+        protected Bitmap doInBackground(String... urls) {
+            System.out.println("CARGANDO DESDE LA URL -> " + urls[0]);
+            String urldisplay = urls[0];
+            Bitmap mIcon11 = null;
+            try {
+                InputStream in = new java.net.URL(urldisplay).openStream();
+                mIcon11 = BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return mIcon11;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap result) {
+            db.setImage(result);
+        }
+
+    }
+
 }

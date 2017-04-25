@@ -31,6 +31,7 @@ import java.util.List;
 import abcd.com.waya.R;
 import abcd.com.waya.adapters.RecyclerBarAdapter;
 import abcd.com.waya.entities.DataBar;
+import abcd.com.waya.entities.DataBarSingleton;
 
 public class FindBarListFrag extends Fragment{
 
@@ -41,6 +42,7 @@ public class FindBarListFrag extends Fragment{
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.Adapter adapter;
+    DataBarSingleton dbs = DataBarSingleton.getInstance();
     //Vista del fragmento
     View view;
 
@@ -57,12 +59,6 @@ public class FindBarListFrag extends Fragment{
         //----------------------------------------------------------------------------------------------
         //Make call to AsyncTask
         new AsyncFetch().execute();
-        /**
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        layoutManager = new LinearLayoutManager(view.getContext());
-        recyclerView.setLayoutManager(layoutManager);
-        adapter = new RecyclerBarAdapter();
-        recyclerView.setAdapter(adapter);**/
     }
 
     @Override
@@ -86,7 +82,7 @@ public class FindBarListFrag extends Fragment{
             super.onPreExecute();
 
             //this method will be running on UI thread
-            pdLoading.setMessage("\tLoading...");
+            pdLoading.setMessage("\tCargando Datos...");
             pdLoading.setCancelable(false);
             pdLoading.show();
 
@@ -183,8 +179,13 @@ public class FindBarListFrag extends Fragment{
                     barData.title = json_data.getString("name");
                     barData.imgs = json_data.getString("logo");
                     barData.description = json_data.getString("descripcion");
+                    barData.longitud = json_data.getString("longitud");
+                    barData.latitud = json_data.getString("latitud");
+                    barData.tipo = json_data.getString("tipo");
                     data.add(barData);
                 }
+
+                dbs.setData(data);
 
                 // Setup and Handover data to recyclerview
                 recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
