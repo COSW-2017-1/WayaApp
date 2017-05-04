@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -38,24 +39,37 @@ public class FindFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_find, container, false);
         loadFragments();
+        loadColors();
         loadActions();
         return  view;
     }
 
-    private void loadActions() {
+    private void loadColors() {
         favourites = (ImageView) view.findViewById(R.id.tofavourites);
         favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorNeonBlueLigth));
         coupons = (ImageView) view.findViewById(R.id.tocoupons);
         events = (ImageView) view.findViewById(R.id.toevents);
 
+        favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
+        favourites.setBackground(getResources().getDrawable(R.drawable.ripple_effect_primary_color));
+        coupons.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
+        coupons.setBackgroundColor(Color.parseColor("#424242"));
+        events.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
+        events.setBackgroundColor(Color.parseColor("#424242"));
+    }
+
+    private void loadActions() {
         favourites.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorNeonBlueLigth));
-                coupons.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
-                events.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
+                favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
+                favourites.setBackground(getResources().getDrawable(R.drawable.ripple_effect_primary_color));
+                coupons.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
+                coupons.setBackgroundColor(Color.parseColor("#424242"));
+                events.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
+                events.setBackgroundColor(Color.parseColor("#424242"));
                 transaction = fragmentManager.beginTransaction();
-                FindBarListFrag fbl = new FindBarListFrag();
+                FindBarListFrag fbl = FindBarListFrag.getInstance();
                 transaction.replace(R.id.tab_fragment_container, fbl);
                 transaction.commit();
             }
@@ -64,9 +78,12 @@ public class FindFrag extends Fragment {
         coupons.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
-                coupons.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorNeonBlueLigth));
-                events.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
+                favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
+                favourites.setBackgroundColor(Color.parseColor("#424242"));
+                coupons.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
+                coupons.setBackground(getResources().getDrawable(R.drawable.ripple_effect_primary_color));
+                events.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
+                events.setBackgroundColor(Color.parseColor("#424242"));
                 transaction = fragmentManager.beginTransaction();
                 CouponsFrag cf = new CouponsFrag();
                 transaction.replace(R.id.tab_fragment_container, cf);
@@ -77,9 +94,12 @@ public class FindFrag extends Fragment {
         events.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
-                coupons.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
-                events.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorNeonBlueLigth));
+                favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
+                favourites.setBackgroundColor(Color.parseColor("#424242"));
+                coupons.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
+                coupons.setBackgroundColor(Color.parseColor("#424242"));
+                events.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
+                events.setBackground(getResources().getDrawable(R.drawable.ripple_effect_primary_color));
                 transaction = fragmentManager.beginTransaction();
                 EventsFrag ef = new EventsFrag();
                 transaction.replace(R.id.tab_fragment_container, ef);

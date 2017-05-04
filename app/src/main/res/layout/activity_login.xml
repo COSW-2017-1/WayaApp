@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_neon"
-        android:weightSum="3"
+        android:weightSum="4"
         android:orientation="vertical"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -20,24 +20,43 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="2">
+            android:layout_weight="3"
+            android:layout_margin="8dp">
 
             <TextView
+                android:id="@+id/logint1"
+                android:paddingTop="16dp"
                 android:layout_margin="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorBaseWhite"
                 android:textSize="40sp"
                 android:textStyle="bold"
-                android:text="@string/welcome_message_title"/>
+                android:text="@string/welcome_message_title"
+                android:gravity="center"/>
 
             <TextView
+                android:id="@+id/logint2"
+                android:paddingTop="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBaseWhite"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:text="@string/welcome_message"
+                android:gravity="center"/>
+
+            <TextView
+                android:paddingTop="24dp"
+                android:id="@+id/logint3"
                 android:layout_margin="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textColor="@color/colorBaseWhite"
-                android:text="@string/welcome_message"/>
+                android:text="@string/info_message"
+                android:gravity="center"/>
 
         </LinearLayout>
 
@@ -49,6 +68,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/mail"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:hint="@string/prompt_email"
@@ -57,6 +77,7 @@
                 android:backgroundTint="@color/colorBaseWhite"/>
 
             <EditText
+                android:id="@+id/password"
                 android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -71,8 +92,8 @@
                 android:layout_height="48dp"
                 android:text="@string/action_sign_in"
                 android:textColor="@color/colorAccent"
-                android:background="@drawable/ripple_effect_primary_color"
-                android:id="@+id/button"
+                android:background="@drawable/ripple_effect_base_white"
+                android:id="@+id/login_button"
                 android:onClick="verifyAndSend"/>
 
         </LinearLayout>

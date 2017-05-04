@@ -18,16 +18,29 @@
         android:layout_height="match_parent">
 
 
-        <ImageView
-            android:id="@+id/bar_image"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:scaleType="fitCenter"
-            android:layout_height="140dp"/>
+            android:layout_height="140dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:layout_height="match_parent"
+                android:background="@color/colorBaseWhite"/>
+
+            <ImageView
+                android:id="@+id/bar_image"
+                android:layout_width="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
         <View
             android:layout_marginRight="2dp"
             android:layout_marginLeft="2dp"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:background="@color/colorAccent"/>
 
         <LinearLayout
@@ -51,6 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
+                android:maxLength="50"
                 android:text="contenido"/>
 
             <LinearLayout
@@ -71,7 +85,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
-                    android:text="11pm a 3am"/>
+                    android:text=" 11pm a 3am"/>
 
             </LinearLayout>
 

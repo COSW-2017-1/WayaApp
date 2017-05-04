@@ -37,7 +37,7 @@
                     android:layout_height="0px"
                     android:padding="15dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_drink_simple"
+                    android:src="@drawable/ic_drink"
                     android:background="@drawable/ripple_effect_white"
                     android:onClick="changeView"/>
 
@@ -57,7 +57,7 @@
                     android:layout_weight="1.1"
                     android:layout_width="match_parent"
                     android:layout_height="0px"
-                    android:paddingLeft="15dp"
+                    android:padding="10dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/ic_gallery"
                     android:background="@drawable/ripple_effect_white"
@@ -70,7 +70,7 @@
                     android:layout_height="0px"
                     android:padding="15dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_comment"
+                    android:src="@drawable/ic_maps"
                     android:background="@drawable/ripple_effect_white"
                     android:onClick="changeView"/>
 

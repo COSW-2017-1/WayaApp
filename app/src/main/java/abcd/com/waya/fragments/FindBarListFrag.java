@@ -46,6 +46,18 @@ public class FindBarListFrag extends Fragment{
     //Vista del fragmento
     View view;
 
+    private static FindBarListFrag instance = null;
+
+    public FindBarListFrag() {
+    }
+
+    public static FindBarListFrag getInstance() {
+        if(instance == null) {
+            instance = new FindBarListFrag();
+        }
+        return instance;
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -58,7 +70,16 @@ public class FindBarListFrag extends Fragment{
         super.onActivityCreated(savedInstanceState);
         //----------------------------------------------------------------------------------------------
         //Make call to AsyncTask
-        new AsyncFetch().execute();
+        try{
+            dbs.getData().get(0);
+            recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+            layoutManager = new LinearLayoutManager(view.getContext());
+            recyclerView.setLayoutManager(layoutManager);
+            adapter = new RecyclerBarAdapter(dbs.getData());
+            recyclerView.setAdapter(adapter);
+        }catch (Exception e){
+            new AsyncFetch().execute();
+        }
     }
 
     @Override
@@ -182,6 +203,9 @@ public class FindBarListFrag extends Fragment{
                     barData.longitud = json_data.getString("longitud");
                     barData.latitud = json_data.getString("latitud");
                     barData.tipo = json_data.getString("tipo");
+                    barData.direccion = json_data.getString("direccion");
+                    barData.genero = json_data.getString("genero");
+                    barData.horario = json_data.getString("horario");
                     data.add(barData);
                 }
 

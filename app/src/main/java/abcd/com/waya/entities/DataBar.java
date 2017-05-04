@@ -14,6 +14,9 @@ public class DataBar {
     public String longitud;
     public String latitud;
     public String tipo;
+    public String direccion;
+    public String genero;
+    public String horario;
 
 
     public Bitmap getImage(){

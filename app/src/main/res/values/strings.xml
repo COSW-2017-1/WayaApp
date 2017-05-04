@@ -1,11 +1,22 @@
 <resources>
     <string name="app_name">Waya</string>
-    <string name="welcome_message_title">Bienvenido a Waya!</string>
-    <string name="welcome_message">Utiliza Waya para revisar el estado de tus bares favoritos en tiempo real, además gana puntos de descuento subiendo contenido del sitio en el que estás para hacer más grande nuestra comunidad :)</string>
+    <string name="welcome_message_title">Looking for a party?</string>
+    <string name="welcome_message">Welcome to Waya</string>
+    <string name="info_message">Waya is the new era of social Network, here you can share your pics, upload videos and look for the best place for you to have a good party nigth or a relaxing talking date with your crush, so dont\'t lose your time! join NOW</string>
     <string name="prompt_email">Correo</string>
     <string name="prompt_password">Contraseña</string>
     <string name="action_sign_in">ingresa o regístrate</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hours">Horario:</string>
+    <string name="hours">Horario: </string>
+    <string name="title_activity_bar_information">Información del Bar</string>
+    <string name="large_text">
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="direction">Dirección:</string>
+    <string name="bar_description">Descripción del bar:</string>
 </resources>
