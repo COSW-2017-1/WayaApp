@@ -14,7 +14,6 @@ import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,8 +31,7 @@ import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import abcd.com.waya.R;
-import abcd.com.waya.entities.DataBarSingleton;
+import abcd.com.waya.entities.singleton.DataBarSingleton;
 
 /**
  * Created by PERSONAL on 20/03/2017.

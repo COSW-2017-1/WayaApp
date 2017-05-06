@@ -1,9 +1,6 @@
 package abcd.com.waya.adapters;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,38 +10,38 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import abcd.com.waya.BarInformationActivity;
 import abcd.com.waya.R;
 import abcd.com.waya.entities.DataBar;
+import abcd.com.waya.entities.DataEvent;
 
 /**
  * Created by PERSONAL on 30/03/2017.
  */
 
-public class RecyclerBarAdapter extends RecyclerView.Adapter<RecyclerBarAdapter.ViewHolder>{
+public class RecyclerEventAdapter extends RecyclerView.Adapter<RecyclerEventAdapter.ViewHolder>{
 
-    List<DataBar> data= Collections.emptyList();
+    List<DataEvent> data= Collections.emptyList();
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
-    public RecyclerBarAdapter(List<DataBar> data) {
+    public RecyclerEventAdapter(List<DataEvent> data) {
         this.data = data;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
 
-        public int currentItem;
-        public ImageView barImage;
-        public TextView barTitle;
-        public TextView barDescription;
+        public TextView title;
+        public TextView eventDate;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            barImage = (ImageView) itemView.findViewById(R.id.bar_image);
-            barTitle = (TextView) itemView.findViewById(R.id.bar_title);
-            barDescription = (TextView) itemView.findViewById(R.id.bar_description);
+            title = (TextView) itemView.findViewById(R.id.event_title);
+            eventDate = (TextView) itemView.findViewById(R.id.event_date);
 
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override
@@ -53,8 +50,6 @@ public class RecyclerBarAdapter extends RecyclerView.Adapter<RecyclerBarAdapter.
                     Intent intent = new Intent(view.getContext() ,BarInformationActivity.class);
                     intent.putExtra("position",position);
                     view.getContext().startActivity(intent);
-                    //Snackbar.make(view, "Clic detectado en el item " + position,
-                    //       Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                 }
             });
         }
@@ -63,21 +58,18 @@ public class RecyclerBarAdapter extends RecyclerView.Adapter<RecyclerBarAdapter.
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.bar_card_layout, viewGroup, false);
+                .inflate(R.layout.event_card_layout, viewGroup, false);
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        DataBar current = data.get(position);
-        System.out.println("URL DE IMAGEN -> " + current.imgs);
-        Picasso.with(holder.barImage.getContext()).load(current.imgs).into(holder.barImage);
-
-        //new DownloadImageTask(current).execute(current.imgs);
-        //holder.barImage.setImageBitmap(current.getImage());
-        holder.barTitle.setText(current.title);
-        holder.barDescription.setText(current.description);
+        DataEvent current = data.get(position);
+        holder.title.setText(current.title);
+        Date date = new Date(current.eventDate);
+        String expDateC = dateFormat.format(date);
+        holder.eventDate.setText(expDateC);
     }
 
     @Override

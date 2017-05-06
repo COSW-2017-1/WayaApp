@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import abcd.com.waya.entities.DataBarSingleton;
+import abcd.com.waya.entities.singleton.DataBarSingleton;
 
 public class BarInformationActivity extends AppCompatActivity {
 

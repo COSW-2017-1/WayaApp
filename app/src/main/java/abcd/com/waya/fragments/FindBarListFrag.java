@@ -2,7 +2,6 @@ package abcd.com.waya.fragments;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
-import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -31,7 +29,7 @@ import java.util.List;
 import abcd.com.waya.R;
 import abcd.com.waya.adapters.RecyclerBarAdapter;
 import abcd.com.waya.entities.DataBar;
-import abcd.com.waya.entities.DataBarSingleton;
+import abcd.com.waya.entities.singleton.DataBarSingleton;
 
 public class FindBarListFrag extends Fragment{
 
@@ -72,7 +70,7 @@ public class FindBarListFrag extends Fragment{
         //Make call to AsyncTask
         try{
             dbs.getData().get(0);
-            recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+            recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_bar_list);
             layoutManager = new LinearLayoutManager(view.getContext());
             recyclerView.setLayoutManager(layoutManager);
             adapter = new RecyclerBarAdapter(dbs.getData());
@@ -206,13 +204,14 @@ public class FindBarListFrag extends Fragment{
                     barData.direccion = json_data.getString("direccion");
                     barData.genero = json_data.getString("genero");
                     barData.horario = json_data.getString("horario");
+                    barData.coupons = json_data.getString("cupones");
                     data.add(barData);
                 }
 
                 dbs.setData(data);
 
                 // Setup and Handover data to recyclerview
-                recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+                recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_bar_list);
                 layoutManager = new LinearLayoutManager(view.getContext());
                 recyclerView.setLayoutManager(layoutManager);
                 adapter = new RecyclerBarAdapter(data);

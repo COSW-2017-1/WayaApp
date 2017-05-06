@@ -17,6 +17,7 @@ public class DataBar {
     public String direccion;
     public String genero;
     public String horario;
+    public String coupons;
 
 
     public Bitmap getImage(){

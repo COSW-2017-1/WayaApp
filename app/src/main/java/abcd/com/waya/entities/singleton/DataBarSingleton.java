@@ -1,7 +1,9 @@
-package abcd.com.waya.entities;
+package abcd.com.waya.entities.singleton;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import abcd.com.waya.entities.DataBar;
 
 /**
  * Created by PERSONAL on 24/04/2017.

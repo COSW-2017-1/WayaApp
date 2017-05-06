@@ -70,8 +70,12 @@ public class FindFrag extends Fragment {
                 events.setBackgroundColor(Color.parseColor("#424242"));
                 transaction = fragmentManager.beginTransaction();
                 FindBarListFrag fbl = FindBarListFrag.getInstance();
-                transaction.replace(R.id.tab_fragment_container, fbl);
-                transaction.commit();
+                if(!fbl.isAdded()){
+                    transaction.replace(R.id.tab_fragment_container, fbl);
+                    transaction.commit();
+                }else{
+                    transaction.show(fbl);
+                }
             }
         });
 
@@ -85,9 +89,13 @@ public class FindFrag extends Fragment {
                 events.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
                 events.setBackgroundColor(Color.parseColor("#424242"));
                 transaction = fragmentManager.beginTransaction();
-                CouponsFrag cf = new CouponsFrag();
-                transaction.replace(R.id.tab_fragment_container, cf);
-                transaction.commit();
+                CouponsFrag cf = CouponsFrag.getInstance();
+                if(!cf.isAdded()){
+                    transaction.replace(R.id.tab_fragment_container, cf);
+                    transaction.commit();
+                }else {
+                    transaction.show(cf);
+                }
             }
         });
 
@@ -101,9 +109,14 @@ public class FindFrag extends Fragment {
                 events.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
                 events.setBackground(getResources().getDrawable(R.drawable.ripple_effect_primary_color));
                 transaction = fragmentManager.beginTransaction();
-                EventsFrag ef = new EventsFrag();
-                transaction.replace(R.id.tab_fragment_container, ef);
-                transaction.commit();
+                EventsFrag ef = EventsFrag.getInstance();
+                if(!ef.isAdded()){
+                    transaction.replace(R.id.tab_fragment_container, ef);
+                    transaction.commit();
+                }else{
+                    transaction.show(ef);
+                }
+
             }
         });
 
@@ -114,9 +127,13 @@ public class FindFrag extends Fragment {
         fragmentManager = getFragmentManager();
         //Crear transacción
         transaction = fragmentManager.beginTransaction();
-        FindBarListFrag ff = new FindBarListFrag();
-        transaction.add(R.id.tab_fragment_container, ff);
-        transaction.commit();
+        FindBarListFrag ff = FindBarListFrag.getInstance();
+        if(!ff.isAdded()){
+            transaction.replace(R.id.tab_fragment_container, ff);
+            transaction.commit();
+        }else{
+            transaction.show(ff);
+        }
     }
 
 
