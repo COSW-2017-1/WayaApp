@@ -17,6 +17,12 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB6iyRJurwbZHn9eaBgk08JoxXw3D95QJg" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notification_icon" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@drawable/background_neon" />
 
         <activity
             android:name=".SplashScreen"
@@ -38,7 +44,8 @@
         <activity
             android:name=".BarInformationActivity"
             android:label="@string/title_activity_bar_information"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".EditInformation"></activity>
     </application>
 
 </manifest>

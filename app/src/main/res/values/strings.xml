@@ -21,4 +21,7 @@
     <string name="direction">Dirección:</string>
     <string name="bar_description">Descripción del bar:</string>
     <string name="date">Fecha:</string>
+    <string name="edit_info">Editar / Agregar Información</string>
+    <string name="sign_out">Cerrar Sesión</string>
+    <string name="enviar">Enviar</string>
 </resources>

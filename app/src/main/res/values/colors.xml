@@ -12,4 +12,17 @@
     <color name="colorNeonGreen">#37C6A3</color>
     <color name="colorNeonBlueDark">#100A5B</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="barColor1">#EF8800</color>
+    <color name="barColor2">#F7DAB4</color>
+    <color name="barColor3">#F9CA5C</color>
+    <color name="barColor3dark">#A5863D</color>
+    <color name="barColor4">#ED7661</color>
+    <color name="barColor5">#3EA5B2</color>
+    <color name="barColor5dark">#246168</color>
+    <color name="barColor6">#A0F4FF</color>
+    <color name="bgGrey">#EEF0E2</color>
+    <color name="danger">#D34748</color>
+    <color name="dangerDarker">#892E30</color>
+    <color name="success">#5CB74E</color>
+    <color name="successDark">#4D9941</color>
 </resources>

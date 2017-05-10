@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "238634185332",
+    "firebase_url": "https://wayaapp-9ee01.firebaseio.com",
+    "project_id": "wayaapp-9ee01",
+    "storage_bucket": "wayaapp-9ee01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238634185332:android:949d0ac7e439a1e5",
+        "android_client_info": {
+          "package_name": "abcd.com.waya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238634185332-udihvgb1fill3hogj7a6emkoijua2e1u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "abcd.com.waya",
+            "certificate_hash": "919c9ef509d8baf8ed7a4999d748d22334346c6e"
+          }
+        },
+        {
+          "client_id": "238634185332-hhpi7pgr9hjfdnu8quei6b9aujajfp1r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiGJLkD-DDQYkXE9nDaX_dHVY0FjZA6FM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238634185332-hhpi7pgr9hjfdnu8quei6b9aujajfp1r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

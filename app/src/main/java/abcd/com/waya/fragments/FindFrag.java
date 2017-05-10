@@ -44,8 +44,36 @@ public class FindFrag extends Fragment {
         return  view;
     }
 
+    private void loadColors(int id){
+        switch (id){
+            case R.id.tofavourites:
+                favourites.setBackground(getResources().getDrawable(R.drawable.ripple_effect_bg_find));
+                coupons.setBackground(getResources().getDrawable(R.color.barColor5));
+                events.setBackground(getResources().getDrawable(R.color.barColor5));
+                break;
+            case R.id.tocoupons:
+                favourites.setBackground(getResources().getDrawable(R.color.barColor5));
+                coupons.setBackground(getResources().getDrawable(R.drawable.ripple_effect_bg_find));
+                events.setBackground(getResources().getDrawable(R.color.barColor5));
+                break;
+            case R.id.toevents:
+                favourites.setBackground(getResources().getDrawable(R.color.barColor5));
+                coupons.setBackground(getResources().getDrawable(R.color.barColor5));
+                events.setBackground(getResources().getDrawable(R.drawable.ripple_effect_bg_find));
+                break;
+        }
+    }
+
     private void loadColors() {
         favourites = (ImageView) view.findViewById(R.id.tofavourites);
+        favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.barColor6));
+        coupons = (ImageView) view.findViewById(R.id.tocoupons);
+        coupons.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.barColor6));
+        events = (ImageView) view.findViewById(R.id.toevents);
+        events.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.barColor6));
+        loadColors(favourites.getId());
+
+        /**favourites = (ImageView) view.findViewById(R.id.tofavourites);
         favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorNeonBlueLigth));
         coupons = (ImageView) view.findViewById(R.id.tocoupons);
         events = (ImageView) view.findViewById(R.id.toevents);
@@ -55,19 +83,21 @@ public class FindFrag extends Fragment {
         coupons.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
         coupons.setBackgroundColor(Color.parseColor("#424242"));
         events.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
-        events.setBackgroundColor(Color.parseColor("#424242"));
+        events.setBackgroundColor(Color.parseColor("#424242"));*/
     }
 
     private void loadActions() {
         favourites.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
+                /**favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
                 favourites.setBackground(getResources().getDrawable(R.drawable.ripple_effect_primary_color));
                 coupons.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
                 coupons.setBackgroundColor(Color.parseColor("#424242"));
                 events.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
-                events.setBackgroundColor(Color.parseColor("#424242"));
+                events.setBackgroundColor(Color.parseColor("#424242"));**/
+                loadColors(favourites.getId());
+
                 transaction = fragmentManager.beginTransaction();
                 FindBarListFrag fbl = FindBarListFrag.getInstance();
                 if(!fbl.isAdded()){
@@ -82,12 +112,14 @@ public class FindFrag extends Fragment {
         coupons.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
+                /**favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
                 favourites.setBackgroundColor(Color.parseColor("#424242"));
                 coupons.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
                 coupons.setBackground(getResources().getDrawable(R.drawable.ripple_effect_primary_color));
                 events.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
-                events.setBackgroundColor(Color.parseColor("#424242"));
+                events.setBackgroundColor(Color.parseColor("#424242"));*/
+                loadColors(coupons.getId());
+
                 transaction = fragmentManager.beginTransaction();
                 CouponsFrag cf = CouponsFrag.getInstance();
                 if(!cf.isAdded()){
@@ -102,12 +134,14 @@ public class FindFrag extends Fragment {
         events.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
+                /**favourites.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
                 favourites.setBackgroundColor(Color.parseColor("#424242"));
                 coupons.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.greyLigth));
                 coupons.setBackgroundColor(Color.parseColor("#424242"));
                 events.setColorFilter(ContextCompat.getColor(view.getContext(),R.color.colorDarkOrange));
-                events.setBackground(getResources().getDrawable(R.drawable.ripple_effect_primary_color));
+                events.setBackground(getResources().getDrawable(R.drawable.ripple_effect_primary_color));*/
+                loadColors(events.getId());
+
                 transaction = fragmentManager.beginTransaction();
                 EventsFrag ef = EventsFrag.getInstance();
                 if(!ef.isAdded()){

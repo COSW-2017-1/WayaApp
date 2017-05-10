@@ -1,109 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="8dp"
-    android:background="@color/colorBaseWhite">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:background="@color/barColor2">
 
-        <ImageView
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:id="@+id/imageView" />
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/username"
+            android:layout_margin="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:text="Johan Sebastian Peña Peñaloza"
+            android:textSize="24sp"
+            android:textColor="#A8947A"
+            android:gravity="center"/>
 
-            <TextView
-                android:layout_marginTop="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nombre"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userpic"
+            android:layout_margin="8dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_profile"/>
 
-            <TextView
-                android:layout_marginTop="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Contacto:"/>
+        <TextView
+            android:id="@+id/userstatus"
+            android:layout_margin="8dp"
+            android:textColor="#A8947A"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Algo acerca de ti?"
+            android:gravity="center"/>
 
-            <TextView
-                android:layout_marginTop="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Etadísticas:"/>
+        <View
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#A8947A"/>
 
-            <TextView
-                android:layout_marginTop="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rango:"/>
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="9">
+
+            <LinearLayout
+                android:layout_weight="3"
+                android:layout_width="0px"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_contrib"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="3"
+                android:layout_width="0px"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_rank"
+                    android:background="@android:color/transparent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="3"
+                android:layout_width="0px"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_stats"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"/>
+
+            </LinearLayout>
 
         </LinearLayout>
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="8dp"
+    <Button
+        android:id="@+id/edit_mode"
+        android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="@string/edit_info"
+        android:background="@color/barColor3"
+        android:textColor="@color/colorBaseWhite"/>
 
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="10"/>
-
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="89"/>
-
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="69"/>
-
-    </LinearLayout>
-
-    <LinearLayout
+    <Button
+        android:id="@+id/sign_out"
+        android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Salidas"/>
-
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="puntos"/>
-
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="aportes"/>
-
-    </LinearLayout>
-
-
+        android:text="@string/sign_out"
+        android:background="@color/danger"
+        android:textColor="@color/colorBaseWhite"/>
 
 </LinearLayout>
