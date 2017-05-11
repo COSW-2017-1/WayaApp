@@ -4,9 +4,27 @@
     android:layout_height="match_parent"
     android:background="@color/colorBaseWhite">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="GALERÍA"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/gallery_view"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/barColor3"
+                android:textSize="32sp"
+                android:text="Garlería"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

@@ -1,9 +1,11 @@
 package abcd.com.waya;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,6 +20,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import abcd.com.waya.entities.singleton.UserProfileSingleton;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -100,6 +104,8 @@ public class LoginActivity extends AppCompatActivity {
                             createAccount(email, password);
                         }else{
                             Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                            prefs.edit().putBoolean("isLogged", true).commit();
                             startActivity(i);
                         }
                     }

@@ -14,7 +14,7 @@
             android:layout_margin="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Johan Sebastian Peña Peñaloza"
+            android:text="Ajusta tu nombre en editar info."
             android:textSize="24sp"
             android:textColor="#A8947A"
             android:gravity="center"/>
@@ -25,7 +25,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:src="@mipmap/ic_profile"/>
+            android:src="@drawable/ic_face"/>
 
         <TextView
             android:id="@+id/userstatus"

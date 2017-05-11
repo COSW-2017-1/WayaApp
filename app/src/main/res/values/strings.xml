@@ -24,4 +24,5 @@
     <string name="edit_info">Editar / Agregar Información</string>
     <string name="sign_out">Cerrar Sesión</string>
     <string name="enviar">Enviar</string>
+    <string name="take_photo">Tomar Foto</string>
 </resources>

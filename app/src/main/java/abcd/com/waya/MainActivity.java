@@ -6,11 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import abcd.com.waya.entities.singleton.UserProfileSingleton;
 import abcd.com.waya.fragments.FindFrag;
 import abcd.com.waya.fragments.GalleryFrag;
 import abcd.com.waya.fragments.ProfileFrag;
 
 public class MainActivity extends AppCompatActivity {
+
+    UserProfileSingleton ups = UserProfileSingleton.getInstance();
 
     //Obtener instancia de admin de fragmentos
     FragmentManager fragmentManager;

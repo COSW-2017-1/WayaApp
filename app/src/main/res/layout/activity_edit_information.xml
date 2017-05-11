@@ -6,61 +6,74 @@
     android:layout_height="match_parent"
     tools:context="abcd.com.waya.EditInformation">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="395dp"
         android:layout_height="587dp"
-        android:orientation="vertical"
         android:layout_margin="8dp"
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp">
 
-        <ImageView
-            android:id="@+id/usr_profile_pic"
-            android:layout_margin="8dp"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_face"/>
-
-        <EditText
-            android:layout_margin="8dp"
-            android:id="@+id/usr_name"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ingresa tu nombre"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <EditText
-            android:layout_margin="8dp"
-            android:id="@+id/usr_status"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ingresa un estado"/>
+            <ImageView
+                android:id="@+id/usr_profile_pic"
+                android:layout_margin="8dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_face"/>
 
-        <EditText
-            android:layout_margin="8dp"
-            android:id="@+id/usr_lname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ingresa tu Apellido"/>
+            <ImageButton
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@mipmap/ic_camera"
+                android:background="@drawable/ripple_effect_success"
+                android:onClick="startCamera"/>
 
-        <EditText
-            android:layout_margin="8dp"
-            android:id="@+id/usr_cellphone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ingresa tu número de celular"/>
+            <EditText
+                android:layout_margin="8dp"
+                android:id="@+id/usr_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingresa tu nombre"/>
 
-        <Button
-            android:layout_margin="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ripple_effect_success"
-            android:textColor="@color/colorBaseWhite"
-            android:text="@string/enviar"
-            android:onClick="applyChanges"/>
+            <EditText
+                android:layout_margin="8dp"
+                android:id="@+id/usr_lname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingresa tu Apellido"/>
 
+            <EditText
+                android:layout_margin="8dp"
+                android:id="@+id/usr_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingresa un estado"/>
 
-    </LinearLayout>
+            <EditText
+                android:layout_margin="8dp"
+                android:id="@+id/usr_cellphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingresa tu número de celular"/>
+
+            <Button
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple_effect_success"
+                android:textColor="@color/colorBaseWhite"
+                android:text="@string/enviar"
+                android:onClick="applyChanges"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 </android.support.constraint.ConstraintLayout>
